@@ -5,7 +5,7 @@ __pycache__/
 e/
 # C extensions
 *.so
-
+disk1.vdi
 # Distribution / packaging
 .Python
 build/

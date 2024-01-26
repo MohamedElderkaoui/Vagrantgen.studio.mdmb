@@ -1,0 +1,20 @@
+- debug:    msg="{{ cf_stack }}"
+- projectname: cluster1
+  provider: virtualbox # libvirt or virtualbox or docker
+  vms:
+  - name: vm01
+    box: centos/7
+    mem: 1024
+    cpu: 2
+    disks:
+    - name: disk1.vdi
+      size: 20 # GBs
+    net:
+    - network: private_network
+      ip: 192.168.122.100
+    - network: public_network
+      dev: br01
+    - network: forwarded_port
+      guest: 80
+      host: 8080
+      host_ip: 127.0.0.1
